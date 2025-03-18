@@ -14,8 +14,9 @@ const form = useForm({
 
 const submit = () => {
 	form.post(route('register'), {
-
+        onFinish: () => form.reset("password", "password_confirmation"),
 	});
+
 };
 </script>
 
@@ -37,9 +38,9 @@ export default {
 			</div>
 		</div>
 
-		<div class="md:w-1/2 w-full flex items-center justify-center	p-8">
+		<div class="md:w-1/2 w-full flex items-center justify-center p-8">
 			<form @submit.prevent="submit" class="w-full max-w-lg">
-				<div class="py-3">
+				<div class="py-3 text-md mb-2">
 					<TextLink routeName="home" label="Back to home" icon="arrow-left" />
 				</div>
 				<div class="flex flex-wrap -mx-3">
@@ -48,7 +49,7 @@ export default {
 							:error="form.errors.first_name" />
 					</div>
 
-					<div class="w-full :w-1/2 px-3 mb-6">
+					<div class="w-full lg:w-1/2 px-3 mb-6">
 						<InputField label="Last Name" placeholder="Last Name" icon="id-badge" v-model="form.last_name"
 							:error="form.errors.last_name" />
 					</div>
@@ -84,7 +85,7 @@ export default {
 					</div>
 					<div class="w-full max-w-lg mb-6 justify-center flex">
 						<p>Already Have an account?
-							<TextLink routeName="home" label="Sign in" />
+							<TextLink routeName="login" label="Sign in" />
 						</p>
 					</div>
 				</div>

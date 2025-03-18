@@ -5,7 +5,7 @@
 	<Head title=" | Home" />
 	<Layout>
 		<div>
-			<h1>Home</h1>
+			<h1>Landing page</h1>
 		</div>
 	</Layout>
 </template>
