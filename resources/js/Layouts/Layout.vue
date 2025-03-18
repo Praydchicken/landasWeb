@@ -8,6 +8,7 @@ import NavLink from '../Components/NavLink.vue';
             <div class="flex justify-between space-x-6">
                 <NavLink routeName="home">Home</NavLink>
                 <div class="flex items-center gap-6">
+                    <p>Logout</p>
                     <NavLink routeName="register">Register</NavLink>
                     <NavLink routeName="login">Login</NavLink>
                 </div>

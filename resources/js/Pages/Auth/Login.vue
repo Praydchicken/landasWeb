@@ -2,7 +2,9 @@
 import TextLink from '../../Components/TextLink.vue';
 import InputField from '../../Components/InputField.vue';
 import PrimaryBtn from '../../Components/PrimaryBtn.vue';
+import CheckBox from '../../Components/CheckBox.vue';
 import { useForm } from '@inertiajs/vue3';
+import ErrorMessages from '../../Components/ErrorMessages.vue';
 
 const form = useForm({
     email: "",
@@ -44,13 +46,13 @@ export default {
                         <InputField label="Password" type="password" placeholder="Password (8+ characters)" icon="key"
                             v-model="form.password" :error="form.errors.password" />
 
-                        <div class="flex flex-wrap w-full justify-between outline-1 mt-3">
-                            <p>Remember me</p>
-                            <p>Forgot Password</p>
+                        <div class="flex w-full justify-between mt-6">
+                            <CheckBox name="remember" v-model="form.remember">Remember me</CheckBox>
+                            <TextLink routeName="register" label="Forgot Password?" />
                         </div>
                     </div>
                     <div class="w-full px-3 mb-6 justify-center flex">
-                        <PrimaryBtn class="w-full py-3">
+                        <PrimaryBtn :disabled="form.processing" class="w-full py-3">
                             Sign In <i class="fa-solid fa-chevron-right "></i></PrimaryBtn>
                     </div>
                     <div class="w-full max-w-lg mb-6 justify-center flex">

@@ -89,7 +89,6 @@ export default {
 						</p>
 					</div>
 				</div>
-
 			</form>
 		</div>
 	</div>
